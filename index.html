@@ -1,29 +1,48 @@
-<!DOCTYPE HTML>
-<!--
-	
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>stanleygathagu</title>
-		<meta charset="utf-8" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>stanley.gathagu</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  
+  <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+</head>
+<body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
+<!-- Header -->
+			
+<!-- count particles -->
+<div class="count-particles">
+  <span class="js-count-particles">--</span> particles
+  
+</div>
+
+<header id="header">
+<div id="particles-js"></div>
+			
+<div id="particles-js"></div>
+
+<script src="particles.js"></script>
+<div class="inner">
 					<a href="https://github.com/ngunyi"target="_blank" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
 					<h1><strong>I am Stanley</strong>, a developer,<br />
 					analyst and student<br />
 					
 				</div>
+<!-- particles.js container -->
+
+				
 			</header>
+
 
 		<!-- Main -->
 			<div id="main">
+			
 
 				<!-- One -->
 					<section id="one">
@@ -40,7 +59,7 @@
 
 				<!-- Two -->
 					<section id="two">
-						<h1>Recent Work</h1>
+						<h2><br></h2>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
 							<header>
@@ -167,9 +186,9 @@
 			<footer id="footer">
 				<div class="inner">
 					<ul class="icons">
-						    <li><a href="https://twitter.com/stan_stush" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="http://www.linkedin.com/in/stanleygathagu" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
-							<li><a href="https://github.com/ngunyi" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						    <li><a href="https://twitter.com/stan_stush" target="_blank" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="http://www.linkedin.com/in/stanleygathagu" target="_blank" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/ngunyi" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
 						    <li><a href="mailto:theofficialarbana@protonmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
 					<ul class="copyright">
@@ -186,5 +205,35 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-	</body>
+	
+
+
+
+<!-- scripts -->
+<script src="../particles.js"></script>
+<script src="js/app.js"></script>
+
+<!-- stats.js -->
+<script src="js/lib/stats.js"></script>
+<script>
+  var count_particles, stats, update;
+  stats = new Stats;
+  stats.setMode(0);
+  stats.domElement.style.position = 'absolute';
+  stats.domElement.style.left = '0px';
+  stats.domElement.style.top = '0px';
+  document.body.appendChild(stats.domElement);
+  count_particles = document.querySelector('.js-count-particles');
+  update = function() {
+    stats.begin();
+    stats.end();
+    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+    }
+    requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+</script>
+
+</body>
 </html>
