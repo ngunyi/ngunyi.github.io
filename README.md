@@ -1,4 +1,4 @@
-## particles.js
+## Ngunyi's website leverages particles.js
 
 ### A lightweight JavaScript library for creating particles.
 
